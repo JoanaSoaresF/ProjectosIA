@@ -1,0 +1,94 @@
+********************* LINKS *********************
+Oradea: Zerind (62.0); Sibiu (212.0); 
+Zerind: Arad (63.0); Oradea (62.0); 
+Bucharest: Giurgiu (58.0); Fagaras (184.0); Urziceni (44.0); Pitesti (127.0); 
+Urziceni: Bucharest (44.0); Hirsova (120.0); Vaslui (222.0); 
+Arad: Timisoara (39.0); Sibiu (217.0); Zerind (63.0); 
+Mehadia: Lugoj (104.0); Dobreta (37.0); 
+Neamt: Iasi (94.0); 
+Iasi: Vaslui (76.0); Neamt (94.0); 
+R. Vilcea: Sibiu (89.0); Craiova (98.0); Pitesti (35.0); 
+Eforie: Hirsova (71.0); 
+Pitesti: Craiova (95.0); Bucharest (127.0); R. Vilcea (35.0); 
+Timisoara: Arad (39.0); Lugoj (47.0); 
+Craiova: Pitesti (95.0); R. Vilcea (98.0); Dobreta (94.0); 
+Hirsova: Eforie (71.0); Urziceni (120.0); 
+Vaslui: Iasi (76.0); Urziceni (222.0); 
+Giurgiu: Bucharest (58.0); 
+Sibiu: R. Vilcea (89.0); Arad (217.0); Fagaras (77.0); Oradea (212.0); 
+Dobreta: Mehadia (37.0); Craiova (94.0); 
+Fagaras: Bucharest (184.0); Sibiu (77.0); 
+Lugoj: Mehadia (104.0); Timisoara (47.0); 
+*************************************************
+********************* SETS *********************
+Banat: Timisoara; Mehadia; Lugoj; 
+Crisana: Oradea; Zerind; Arad; 
+Dobrogea: Eforie; Hirsova; 
+Moldova: Iasi; Vaslui; Neamt; 
+Muntenia: Bucharest; Giurgiu; Urziceni; 
+Oltenia: Craiova; R. Vilcea; Pitesti; Dobreta; 
+Transilvania: Fagaras; Sibiu; 
+*************************************************
+
+
+
+
+
+Origem: Arad Destino: Bucharest
+******************* SOLUTION ********************
+Node Expansions: 11
+Nodes Generated: 29
+State Repetitions: 6
+Runtime (ms):  7.495 
+| Arad      |    0 | [Arad, Sibiu] -> 217
+| Sibiu     |  217 | [Sibiu, Fagaras] -> 77
+| Fagaras   |  294 | [Fagaras, Bucharest] -> 184
+| Bucharest |  478 | 
+*************************************************
+******************* SOLUTION ********************
+Node Expansions: 6
+Nodes Generated: 18
+State Repetitions: 0
+Runtime (ms):  0.449 
+| Arad      |    0 | [Arad, Sibiu] -> 217
+| Sibiu     |  217 | [Sibiu, R. Vilcea] -> 89
+| R. Vilcea |  306 | [R. Vilcea, Pitesti] -> 35
+| Pitesti   |  341 | [Pitesti, Bucharest] -> 127
+| Bucharest |  468 | 
+*************************************************
+******************* SOLUTION ********************
+Node Expansions: 7
+Nodes Generated: 17
+State Repetitions: 4
+Runtime (ms):  0.174 
+| Arad      |    0 | [Arad, Timisoara] -> 39
+| Timisoara |   39 | [Timisoara, Lugoj] -> 47
+| Lugoj     |   86 | [Lugoj, Mehadia] -> 104
+| Mehadia   |  190 | [Mehadia, Dobreta] -> 37
+| Dobreta   |  227 | [Dobreta, Craiova] -> 94
+| Craiova   |  321 | [Craiova, Pitesti] -> 95
+| Pitesti   |  416 | [Pitesti, Bucharest] -> 127
+| Bucharest |  543 | 
+*************************************************
+******************* SOLUTION ********************
+Node Expansions: 4
+Nodes Generated: 14
+State Repetitions: 0
+Runtime (ms):  0.361 
+| Arad      |    0 | [Arad, Sibiu] -> 217
+| Sibiu     |  217 | [Sibiu, R. Vilcea] -> 89
+| R. Vilcea |  306 | [R. Vilcea, Pitesti] -> 35
+| Pitesti   |  341 | [Pitesti, Bucharest] -> 127
+| Bucharest |  468 | 
+*************************************************
+******************* SOLUTION ********************
+Node Expansions: 12
+Nodes Generated: 31
+State Repetitions: 17
+Runtime (ms):  0.455 
+| Arad      |    0 | [Arad, Sibiu] -> 217
+| Sibiu     |  217 | [Sibiu, R. Vilcea] -> 89
+| R. Vilcea |  306 | [R. Vilcea, Pitesti] -> 35
+| Pitesti   |  341 | [Pitesti, Bucharest] -> 127
+| Bucharest |  468 | 
+*************************************************
