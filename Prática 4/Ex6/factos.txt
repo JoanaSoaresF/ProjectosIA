@@ -11,7 +11,7 @@ filho(marco, pedro).
 filho(carlos, marco).
 
 %5
-habita(X,Y), corCasa(X, vermelha):- filho(carlos, Y).
+corCasa(X, vermelha):- filho(carlos, Y), habita(X,Y).
 
 %6
 dona(Y, cao):-casado(miguel, Y).
@@ -20,7 +20,7 @@ dona(Y, cao):-casado(miguel, Y).
 habita(1, Y):- filho(carlo, X), filho(X, Y).
 
 %8
-habita(X,Y), adepto(porto, Y):-corCasa(X, amarela).
+habita(X,Y), adepto(porto, Y):-corCasa(X, amarela), homem(Y).
 
 %9 ????
 %habita(B,A), atepto(academica, A) :-habita(Z,Y), casado(Y,X), dona(X, raposa), B=Z-1.

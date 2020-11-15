@@ -1,21 +1,25 @@
-
 1{corCasa(X,Y):cor(Y)}1 :- casa(X).
-:-casa(X), casa(Y), corCasa(X,C), corCasa(Y,C).
+:-casa(X), casa(Y), corCasa(X,C), corCasa(Y,C), X != Y.
 
 1{habita(X, Y):homem(Y)}1 :-casa(X).
-:-casa(X), casa(Y), habita(X,H), habita(Y,H).
+:-casa(X), casa(Y), habita(X,H), habita(Y,H), X != Y.
 
 1{adepto(X, Y):clube(X)}1 :-homem(Y).
-:-homem(X), homem(Y), adepto(X,C), adepto(Y,C).
+:-homem(X), homem(Y), adepto(X,C), adepto(Y,C), X != Y.
 
 1{beber(X, Y):bebida(Y)}1 :-casa(X).
-:-casa(X), casa(Y), beber(X,B), beber(Y,B).
+:-casa(X), casa(Y), beber(X,B), beber(Y,B), X != Y.
 
 1{dona(X, Y):animal(Y)}1 :-mulher(X).
-:-mulher(X), mulher(Y), dona(X,A), dona(Y,A).
+:-mulher(X), mulher(Y), dona(X,A), dona(Y,A), X != Y.
 
 1{casado(X, Y):mulher(Y)}1 :-homem(X).
-:-homem(X), homem(Y), casado(X,A), casado(Y,A).
+:-homem(X), homem(Y), casado(X,A), casado(Y,A), X != Y.
+
+
+%casamentoEstavel(X, Y) :- casados(H1, M1),casados(H2, M2), pref(H1, M1, X), pref(H1, M2, ), 
+
+#show casado/2.
 
 
 
