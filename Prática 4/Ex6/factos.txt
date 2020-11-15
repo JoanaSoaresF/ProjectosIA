@@ -1,0 +1,60 @@
+%1
+filho(miguel, joao).
+
+%2
+filho(joao, pedro).
+
+%3
+filho(marco, pedro).
+
+%4
+filho(carlos, marco).
+
+%5
+habita(X,Y), corCasa(X, vermelha):- filho(carlos, Y).
+
+%6
+dona(Y, cao):-casado(miguel, Y).
+
+%7
+habita(1, Y):- filho(carlo, X), filho(X, Y).
+
+%8
+habita(X,Y), adepto(porto, Y):-corCasa(X, amarela).
+
+%9 ????
+%habita(B,A), atepto(academica, A) :-habita(Z,Y), casado(Y,X), dona(X, raposa), B=Z-1.
+%habita(B,A), atepto(academica, A) :-habita(Z,Y), casado(Y,X), dona(X, raposa), B=Z+1.
+
+%10 ???
+
+%11
+dona(Y, tartaruga):-casado(X,Y), adepto(sporting, X).
+
+%12
+beber(C, sumo):-adepto(benfica, X), habita(C, X).
+
+%13
+beber(C, cha):-filho(miguel, X), habita(C, X).
+
+%14
+adepto(setubal, X):-filho(X, marco).
+
+%15 ????
+
+%16
+beber(X, cafe):-corCasa(X, verde).
+
+%17
+corCasa(X+1, verde):-corCasa(X, branca).
+
+%18?????
+
+%19
+casado(pedro, ana).
+
+%20
+:-casado(carlos, maria).
+
+
+
