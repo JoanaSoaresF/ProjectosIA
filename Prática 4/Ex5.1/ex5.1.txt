@@ -1,0 +1,6 @@
+
+
+% Para cada setX selecionamos o Y do elemento(X, Y)
+1{select(Y): element(X,Y)}1 :- set(X).
+
+#show select/1.

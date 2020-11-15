@@ -1,0 +1,7 @@
+%cada conjunto de x vertices (treshold) tem pelo menos um valor em cada arco
+
+1{select(X): vertex(X)}Z :- threshold(Z).
+:- edge(X,Y), not select(X), not select(Y).
+#show select/1.
+
+#show select/1.

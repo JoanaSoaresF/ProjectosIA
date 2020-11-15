@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 
 import distanceMatrix.*;
@@ -26,7 +25,6 @@ public class Main {
     ArrayList<String> init;
     static ArrayList<String> corrente, proximo, melhor;
     static int n_iter;
-    private static int timeInit;
 
     public static void main(String[] args) {
         String c = "../d.txt";

@@ -1,0 +1,22 @@
+%4 - Programação por Conjuntos de Resposta
+
+equipa(a;b;c;d;e;f).
+grupo(1..2).
+
+%Geradores
+%Cada grupo tem três equipas:
+3{in(X,Y):equipa(X)}3 :- grupo(Y).
+
+%Cada equipa pertence apenas a um grupo
+1{in(X, Y): grupo(Y)}1 :- equipa(X).
+
+%Restrições
+%not in(a,1). forma mais simples. Melhor usar:
+:-in(a,1).
+:-in(a,X), in(e, X).
+:-in(e,X), in(f, X).
+
+aux :- in(b, X), in(c, X).
+:-not aux.
+
+#show in/2.

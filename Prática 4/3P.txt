@@ -1,0 +1,19 @@
+P com restrição:
+
+1{cycle(X,Y) : edge(X,Y)}1 :- node(X).
+reach(Y):-cycle(1,Y).
+reach(Y):-reach(X),cycle(X,Y),X!=1.	
+:-node(Y), not reach(Y).
+
+node(1..3).
+edge(1,2;2,3;3,1;3,2).
+
+P sem restrição:
+
+1{cycle(X,Y) : edge(X,Y)}1 :- node(X).
+reach(Y):-cycle(1,Y).
+reach(Y):-reach(X),cycle(X,Y),X!=1.	
+%:-node(Y), not reach(Y).
+
+node(1..3).
+edge(1,2;2,3;3,1;3,2).
