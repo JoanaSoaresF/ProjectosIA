@@ -17,9 +17,15 @@
 :-homem(X), homem(Y), casado(X,A), casado(Y,A), X != Y.
 
 
-%casamentoEstavel(X, Y) :- casados(H1, M1),casados(H2, M2), pref(H1, M1, X), pref(H1, M2, ), 
+casamentoInstavel(H1, M1), casamentoInstavel(H2, M2) :- casados(H1, M1),casados(H2, M2), pref(H1, M1, X1), pref(H1, M2, X2), pref(M2, H1, X3), pref(M2, H2, X4), X2 > X1, X3>X4.
+
+:- casamentoInstavel(X, Y).
+%casamentoInstavel(Manuel, Paula), casamentoInstavel(Pedro, Maria) :- casados(Manuel, Paula),casados(Pedro, Maria), pref(Manuel, Paula, X1), pref(Manuel, Maria, X2), pref(Maria, Manuel, X3), pref(Maria, Pedro, X4), X2 > X1, X3>X4.
+                                                            
+
 
 #show casado/2.
+#show dona/2.
 
 
 
