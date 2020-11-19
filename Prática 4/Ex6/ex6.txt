@@ -1,30 +1,31 @@
 1{corCasa(X,Y):cor(Y)}1 :- casa(X).
-:-casa(X), casa(Y), corCasa(X,C), corCasa(Y,C), X != Y.
+1{corCasa(X,Y):casa(X)}1 :- cor(Y).
 
 1{habita(X, Y):homem(Y)}1 :-casa(X).
-:-casa(X), casa(Y), habita(X,H), habita(Y,H), X != Y.
+1{habita(X, Y):casa(X)}1 :-homem(Y).
 
 1{adepto(X, Y):clube(X)}1 :-homem(Y).
-:-homem(X), homem(Y), adepto(X,C), adepto(Y,C), X != Y.
+1{adepto(X, Y):homem(Y)}1 :-clube(X).
 
 1{beber(X, Y):bebida(Y)}1 :-casa(X).
-:-casa(X), casa(Y), beber(X,B), beber(Y,B), X != Y.
+1{beber(X, Y):casa(X)}1 :-bebida(Y).
 
 1{dona(X, Y):animal(Y)}1 :-mulher(X).
-:-mulher(X), mulher(Y), dona(X,A), dona(Y,A), X != Y.
+1{dona(X, Y):mulher(X)}1 :-animal(Y).
 
 1{casado(X, Y):mulher(Y)}1 :-homem(X).
-:-homem(X), homem(Y), casado(X,A), casado(Y,A), X != Y.
+1{casado(X, Y):homem(X)}1 :-mulher(Y).
 
 
-casamentoInstavel(H1, M1), casamentoInstavel(H2, M2) :- casados(H1, M1),casados(H2, M2), pref(H1, M1, X1), pref(H1, M2, X2), pref(M2, H1, X3), pref(M2, H2, X4), X2 > X1, X3>X4.
-
-:- casamentoInstavel(X, Y).
-%casamentoInstavel(Manuel, Paula), casamentoInstavel(Pedro, Maria) :- casados(Manuel, Paula),casados(Pedro, Maria), pref(Manuel, Paula, X1), pref(Manuel, Maria, X2), pref(Maria, Manuel, X3), pref(Maria, Pedro, X4), X2 > X1, X3>X4.
-                                                            
+casamentoInstavel(H1, M1), casamentoInstavel(H2, M2) :- casado(H1, M1),casado(H2, M2), pref(H1, M1, X1), pref(H1, M2, X2), pref(M2, H1, X3), pref(M2, H2, X4), X2 > X1, X3>X4, H1!=H2, M1!=M2.
 
 
-#show casado/2.
+%casamentoInstavel(marco, paula), casamentoInstavel(pedro, maria) :- casados(marco, paula),casados(pedro, maria), pref(marco, paula, X1), pref(marco, maria, X2), pref(maria, marco, X3), pref(maria, pedro, X4), X2 > X1, X3>X4.
+
+:- casamentoInstavel(X, Y).                                                          
+
+
+%#show casado/2.
 #show dona/2.
 
 

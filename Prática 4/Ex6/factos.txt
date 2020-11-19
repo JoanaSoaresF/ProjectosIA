@@ -1,3 +1,5 @@
+aoLado(C1,C2):- casa(C1), casa(C2), |C1-C2| ==1.
+
 %1
 filho(miguel, joao).
 
@@ -11,50 +13,97 @@ filho(marco, pedro).
 filho(carlos, marco).
 
 %5
-corCasa(X, vermelha):- filho(carlos, Y), habita(X,Y).
+:-filho(carlos, Y), corCasa(C, vermelha), habita(C, H), Y!=H.
+
 
 %6
-dona(Y, cao):-casado(miguel, Y).
+:-casado(miguel,X), dona(M, cao), X!=M.
+
 
 %7
-habita(1, Y):- filho(carlo, X), filho(X, Y).
+:-filho(carlos, P), filho(P,A), habita(1,H), H!=A.
 
-%8
-habita(X,Y), adepto(porto, Y):-corCasa(X, amarela), homem(Y).
+%habita(1, Y):- filho(carlos, X), filho(X, Y). testar depois
+%habita(1, pedro).
 
-%9 ????
-%habita(B,A), atepto(academica, A) :-habita(Z,Y), casado(Y,X), dona(X, raposa), B=Z-1.
-%habita(B,A), atepto(academica, A) :-habita(Z,Y), casado(Y,X), dona(X, raposa), B=Z+1.
+%8 ???--
+:-corCasa(C,amarela), habita(C, H), adepto(porto, Y), Y!=H.
+
+
+
+%9 ????---
+:- adepto(academica, A), dona(D, raposa), casado(H, D), habita(C, H), habita(C2, A), not aoLado(C, C2).
+
 
 %10 ???
+:-habita(C, pedro), corCasa(C2,azul), not aoLado(C, C2).
+
+%corCasa(A, azul):-habita(C, pedro), casa(A), A<=C+1, A>=C-1, A!=C.
+
 
 %11
-dona(Y, tartaruga):-casado(X,Y), adepto(sporting, X).
+:- adepto(sporting, H), dona(D, tartaruga), casado(H2, D), H!=H2.
+
+
+%dona(Y, tartaruga):-casado(X,Y), adepto(sporting, X).
+
 
 %12
-beber(C, sumo):-adepto(benfica, X), habita(C, X).
+:-adepto(benfica,H), beber(C, sumo), habita(C2, H), C2!=C.
+
+%beber(C, sumo):-adepto(benfica, X), habita(C, X).
+
 
 %13
-beber(C, cha):-filho(miguel, X), habita(C, X).
+:- filho(miguel, P), beber(C, cha), habita(C, H), H!=P.
+
+%beber(C, cha):-filho(miguel, X), habita(C, X).
+
 
 %14
-adepto(setubal, X):-filho(X, marco).
+:-filho(F, marco), adepto(setubal, A), A!=F.
 
-%15 ????
+%adepto(setubal, X):-filho(X, marco).
+
+%15 ????----
+:-adepto(porto, A), dona(D, cavalo), casado(H,D), habita(C,H), habita(C2, A), not aoLado(C, C2).
 
 %16
-beber(X, cafe):-corCasa(X, verde).
+:-corCasa(C, verde), beber(C2, cafe), C!=C2.
+
+%beber(X, cafe):-corCasa(X, verde).
 
 %17
-corCasa(X+1, verde):-corCasa(X, branca).
+:- corCasa(C1, verde), corCasa(C2, branca), C1!=C2-1.
+
+%corCasa(X+1, verde):-corCasa(X, branca).
 
 %18?????
+%Na casa do meio bebe-se leite.
+
+:- not beber(3, leite).
 
 %19
-casado(pedro, ana).
+:- not casado(pedro, ana).
 
 %20
 :-casado(carlos, maria).
 
 
 
+
+%15
+%É adepto do F. C. Porto o morador da casa ao lado da casa onde mora a mulher que é dona do cavalo. 
+%adepto(porto, Y):- habita(B, Y), habita(Z,A), casado(A,X), dona(X, cavalo), B>=Z-1, B<=Z+1, B!=Z.
+%adepto(porto, Y), habita(B, Y):- homem(Y), casa(B), habita(Z,A), casado(A,X), dona(X, cavalo), B>=Z-1, B<=Z+1, B!=Z.
+
+%9
+%aoLado(B,Z) :- adepto(academica, A), habita(B,A), habita(Z,Y), casado(Y,X), dona(X, raposa).
+%adepto(academica, A):- habita(B,A), habita(Z,Y), casado(Y,X), dona(X, raposa), B>=Z-1, B<=Z+1, B!=Z.
+%habita(B,A) :- casa(B), adepto(academica, A), habita(Z,Y), casado(Y,X), dona(X, raposa), B>=Z-1, B<=Z+1, B!=Z.
+%habita(B,A), adepto(academica, A) :-casa(B), homem(A), habita(Z,Y), casado(Y,X), dona(X, raposa), B>=Z-1, B<=Z+1, B!=Z.
+
+%8
+
+%habita(X,Y), adepto(porto, Y):- corCasa(X, amarela), homem(Y).
+%NOT-->adepto(porto, Y):- habita(X,Y), corCasa(X, amarela), homem(Y).
