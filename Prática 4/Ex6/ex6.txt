@@ -18,14 +18,8 @@
 
 
 casamentoInstavel(H1, M1), casamentoInstavel(H2, M2) :- casado(H1, M1),casado(H2, M2), pref(H1, M1, X1), pref(H1, M2, X2), pref(M2, H1, X3), pref(M2, H2, X4), X2 > X1, X3>X4, H1!=H2, M1!=M2.
-
-
-%casamentoInstavel(marco, paula), casamentoInstavel(pedro, maria) :- casados(marco, paula),casados(pedro, maria), pref(marco, paula, X1), pref(marco, maria, X2), pref(maria, marco, X3), pref(maria, pedro, X4), X2 > X1, X3>X4.
-
 :- casamentoInstavel(X, Y).                                                          
 
-
-%#show casado/2.
 #show dona/2.
 
 
